@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mXWalkWebView = (XWalkView) findViewById(R.id.xwv_content);
-        mXWalkWebView.load("http://crosswalk-project.org/", null);
+        mXWalkWebView.load("http://html5test.com/", null);
 
         // turn on debugging
         //XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
