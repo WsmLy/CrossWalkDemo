@@ -1,15 +1,21 @@
-apply plugin: 'com.android.application'
+plugins { id 'com.android.application' }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.jacenchiu.crosswalkdemo"
-        minSdkVersion 19
-        targetSdkVersion 23
+        applicationId "com.example.demotest"
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi-v7a', 'x86'//, 'armeabi', 'x86_64', 'arm64-v8a'
+        }
     }
     buildTypes {
         release {
@@ -20,8 +26,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'org.xwalk:xwalk_core_library:18.48.477.13'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'org.xwalk:xwalk_core_library:23.53.589.4'
 }
